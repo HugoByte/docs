@@ -3,5 +3,4 @@ node_modules
 *.bkp
 .env
 *.swp
-dive/node_modules
-dive/.next
+
