@@ -1,0 +1,49 @@
+---
+title: "Setting Up a NEUTRON Node"
+---
+
+
+import { Callout } from '../../node_modules/nextra/dist/components/callout.js'
+
+# Setting up a NEUTRON Node
+
+In this guide, you'll learn how to set up a Neutron node using DIVE CLI. This process enables you to interact with the cosmos blockchain on your local environment. Follow these steps to get started:
+
+## Step 1: Ensure Kurtosis Engine is Running
+
+Starting a Neutron chain with DIVE CLI is a straightforward process. Before you proceed, make sure the Kurtosis Engine is running in the background. If it's not already running, start it with the following command:
+
+```filename="" copy
+kurtosis engine start
+```
+## Step 2:  Start Neutron Chain
+
+To start a neutron node, run the following command:
+
+```filename="" copy
+dive chain neutron
+```
+Executing this command will generate 'services.json,' in working directory which contains service details for the 'neutron' chain.
+
+<details>
+<summary>
+services.json
+</summary>
+
+```filename="" copy
+{
+  "service_name": "neutron-node"",
+  "endpoint_public": "http://127.0.0.1:26657",
+  "endpoint": "http://172.16.0.3:26657"
+}
+```
+* <b>service_name:</b> The name of the service.
+* <b>endpoint_public:</b> The public endpoint URL for interacting with the service.
+* <b>endpoint:</b> The endpoint for interactiong with the service.
+</details>
+
+
+## Step 3: Setup is completed
+
+After running the command, DIVE CLI will automatically start the NEUTRON node and handle the necessary initialization processes. Please wait for the NEUTRON node to fully initialize, which may take a few moments.
+Once the initialization is complete, you can interact with the local NEUTRON chain as needed. DIVE CLI sets up the NEUTRON node on your local environment, enabling you to deploy and test smart contracts, explore transactions, and experiment with various ICON blockchain features.
