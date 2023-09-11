@@ -1,8 +1,0 @@
-/* styles.module.css */
-
-.glass-background {
-    background-color: rgba(128, 128, 128, 0.2); /* Gray with 20% opacity */
-    backdrop-filter: blur(10px); /* Adding a blur effect for glass-like appearance */
-    /* Add any additional styling you need */
-  }
-  
