@@ -23,11 +23,11 @@ To start an single eth node, run the following command:
 ```filename="" copy
 dive chain eth
 ```
-Executing this command will generate 'dive.json,' in working directory which contains service details for the 'eth' chain.
+Executing this command will generate 'services.json,' in working directory which contains service details for the 'eth' chain.
 
 <details>
 <summary>
-Example of dive.json
+services.json
 </summary>
 
 ```filename="" copy
@@ -42,6 +42,15 @@ Example of dive.json
   "nid": "0x301824"
 }
 ```
+* <b>service_name:</b> The name of the service.
+* <b>endpoint_public:</b> The public endpoint URL for interacting with the service.
+* <b>endpoint:</b> The private endpoint.
+* <b>keypassword:</b> The password used for accessing the service's keystore.
+* <b>keystore_path:</b> The file path for the service's keystore.
+* <b>network:</b> The network ID.
+* <b>network_name:</b> The name of the network.
+* <b>nid:</b> The unique identifier id for the network.  
+
 </details>
 
 
