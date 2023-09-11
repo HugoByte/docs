@@ -1,0 +1,18 @@
+{
+    "setting-up-an-eth-node": {
+      "title":  "Setting up an eth node"
+    },
+    "setting-up-an-icon-node": {
+      "title": "Setting up an icon node"
+    },
+    "setting-up-an-archway-node": {
+      "title": "Setting up an archway node"
+    },
+    "setting-up-a-neutron-node": {
+      "title": "Setting up a neutron node"
+    },
+    "setting-up-cross-chain-connection": {
+      "title" : "Setting up cross chain connection"
+    }
+  }
+  

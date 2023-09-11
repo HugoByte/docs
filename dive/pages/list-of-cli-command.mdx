@@ -1,0 +1,188 @@
+# List of CLI Commands
+
+## DIVE CLI Commands:
+
+### dive
+
+#### Description
+
+Deployable Infrastructure for Virtually Effortless blockchain integration
+
+#### Usage
+
+```filename="" copy
+dive [command]
+```
+
+#### Sub-Commands
+| Command               | Description                                      |
+| --------------------- | -------------------------------------------------|
+| `bridge`      | Command for cross chain communication between two different chains
+| `chain`      | Build, initialise and start a given blockchain node              |
+| `clean`      | Cleans up Kurtosis leftover artifacts               |
+| `discord`                   | Opens DIVE discord channel
+|     `tutorial`    | Opens DIVE tutorial youtube playlist          
+| `twitter`    | Opens official HugoByte twitter home page
+| `version`    |               Prints the CLI version
+
+
+
+### dive bridge
+
+#### Description
+To connect two different chains using any of the supported cross chain communication protocols. This will create an relay to connect two different chains and pass any messages between them.
+
+#### Usage
+
+```filename="" copy
+dive bridge [command]
+```
+
+| Command               | Description                                      |
+| --------------------- | -------------------------------------------------|
+| `btp`      | Starts BTP Bridge between ChainA and ChainB
+
+
+### dive bridge btp
+
+#### Description
+Starts BTP Bridge between ChainA and ChainB
+
+#### Usage
+
+```filename="" copy
+dive bridge btp [flags]
+```
+
+#### Flags
+| Flags          | Required   | Description                                      |
+| -------------- | ---------- | -------------------------------------------------|
+| `--chainA string` | true         | Mention Name of Supported Chain
+| `--chainB string`| true    | Mention Name of Supported Chain
+| `--bridge` | false | Add this flag if icon bridge is required
+
+
+### dive chain
+
+#### Description
+
+The command builds, initializes, and starts a specified blockchain node, providing a seamless setup process. It encompasses compiling and configuring the necessary dependencies and components required for the blockchain network. By executing this command, the node is launched, enabling network participation, transaction processing, and ledger maintenance within the specified blockchain ecosystem.
+
+#### Usage
+
+```filename="" copy
+dive chain [command]
+```
+
+#### Sub-Commands
+| Command               | Description                                      |
+| --------------------- | -------------------------------------------------|
+| `eth`      | Build, initialize and start a eth node
+| `hardhat` | Build, initialize and start a hardhat node
+|`icon` | Build, initialize and start a icon node
+
+
+### dive chain icon
+
+#### Description
+The command starts an Icon node, initiating the process of setting up and launching a local Icon network. It establishes a connection to the Icon network and allows the node in executing smart contracts and maintaining the decentralized ledger.
+
+#### Usage
+
+```filename="" copy
+dive chain icon [flags] 
+dive chain icon [command]
+```
+
+#### Commands
+| Command               | Description                                      |
+| --------------------- | -------------------------------------------------|
+| `decentralize`      | Decentralise already running Icon Node
+
+#### Flags
+| Flags          | Required   | Description                                      |
+| -------------- | ---------- | -------------------------------------------------|
+| `-c, --config string` | true         | path to custom config json file
+| `-d, --decentralisation` | true | decentralise Icon Node
+|`-g, --genesis string` | true | path to custom genesis file
+| `-i, --id string`| true | custom chain id for icon node
+
+
+
+### dive chain icon decentralize
+
+#### Description
+Decentralise Icon Node is necessary if you want to connect your local icon node to BTP network
+
+#### Usage
+
+```filename="" copy
+dive chain icon decentralize [flags]
+```
+
+#### Flags
+| Flags          | Required   | Description                                      |
+| -------------- | ---------- | -------------------------------------------------|
+| `-p, --keyPassword string` | true         | keypassword
+|`-k, --keystorePath string `| true | path to keystore file
+|`-n, --nid string`| true | NetworkId of Icon Node
+|`-e, --nodeEndpoint string` | true | endpoint address
+|`-s, --serviceName string` | true | service name
+
+
+### dive clean
+
+#### Description
+Destroys and removes any running encalves. If no enclaves running to remove it will throw an error
+
+#### Usage
+
+```filename="" copy
+dive clean
+```
+
+### dive discord
+
+#### Description
+
+The command opens the Discord channel for DIVE, providing a direct link or launching the Discord application to access the dedicated DIVE community. It allows users to engage in discussions, seek support, share insights, and collaborate with other members of the DIVE community within the Discord platform.
+
+#### Usage
+
+```filename="" copy
+dive discord
+```
+
+### dive tutorial
+
+#### Description
+The command opens the YouTube playlist containing DIVE tutorials. It launches a web browser or the YouTube application, directing users to a curated collection of tutorial videos specifically designed to guide and educate users about DIVE. The playlist offers step-by-step instructions, tips, and demonstrations to help users better understand and utilize the features and functionalities of DIVE.
+
+#### Usage
+
+```filename="" copy
+dive tutorial
+```
+
+
+### dive twitter
+
+#### Description
+The command opens the official HugoByte Twitter homepage. It launches a web browser and directs users to the designated Twitter profile of HugoByte, providing access to the latest updates, announcements, news, and insights shared by the official HugoByte Twitter account. Users can stay informed about HugoByte's activities, engage with the community, and follow our social media presence directly from the Twitter homepage.
+
+#### Usage
+
+```filename="" copy
+dive twitter
+```
+
+### dive version
+
+#### Description
+Prints the current DIVE CLI version and warns if you are using an old version.
+
+#### Usage
+
+```filename="" copy
+dive version
+```

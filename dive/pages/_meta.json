@@ -1,0 +1,22 @@
+{
+  "index": {
+    "title":  "Home",
+    "type": "page",
+    "display": "hidden"
+  },
+  "docs": {
+    "title": "Docs",
+    "type": "page",
+    "href": "/what-is-dive"
+
+  },
+  "what-is-dive": {
+    "title" : "What is DIVE?"
+  },
+  "why-dive": {
+    "title" : "Why choose DIVE?"
+  },
+  "quickstart": {
+    "title" : "Quickstart"
+  }
+}
