@@ -1,0 +1,66 @@
+---
+title: "Setting Up an ETH Node"
+---
+
+import { Callout } from '../../../node_modules/nextra/dist/components/callout.js'
+
+# Setting up an ETH Node
+
+In this guide, you will learn how to set up an Ethereum node using DIVE CLI. This process allows you to interact with the Ethereum blockchain on your local environment. Follow these steps to get started:
+
+## Step 1: Ensure Kurtosis Engine is Running
+
+Starting an Ethereum chain with DIVE CLI is a straightforward process. Before you proceed, ensure that the Kurtosis Engine is running in the background. If it's not already running, start it with the following command:
+
+```bash filename="" copy
+kurtosis engine start
+```
+
+## Step 2: Start Ethereum Chain
+
+To start a single Ethereum node, execute the following command:
+
+```bash filename="" copy
+dive chain eth
+```
+
+Executing this command will generate a 'services.json' file in the working directory, which contains service details for the 'eth' chain.
+
+<details>
+<summary>
+services.json
+</summary>
+
+```json
+{
+  "service_name": "el-1-geth-lighthouse",
+  "endpoint_public": "http://172.16.0.3:8544",
+  "endpoint": "http://172.16.0.5:8545",
+  "keypassword": "password",
+  "keystore_path": "keystores/eth_keystore.json",
+  "network": "0x301824.eth",
+  "network_name": "eth",
+  "nid": "0x301824"
+}
+```
+
+- **service_name:** The name of the service.
+- **endpoint_public:** The public endpoint URL for interacting with the service.
+- **endpoint:** The private endpoint.
+- **keypassword:** The password used for accessing the service's keystore.
+- **keystore_path:** The file path for the service's keystore.
+- **network:** The network ID.
+- **network_name:** The name of the network.
+- **nid:** The unique identifier for the network.
+
+</details>
+
+## Step 3: Setup is Completed
+
+After running the command, DIVE CLI will automatically start the Ethereum (ETH) node and handle the necessary initialization processes. Please wait for the ETH node to fully initialize, which may take a few moments.
+
+Once the initialization is complete, you can interact with the local Ethereum chain as needed. DIVE CLI sets up the ETH node on your local environment, enabling you to deploy and test smart contracts, explore transactions, and experiment with various Ethereum blockchain features.
+
+<Callout type="info" emoji="💡">
+  *Tip:* DIVE CLI also supports the Hardhat chain. You can start a Hardhat chain by running the command `dive chain hardhat`.
+</Callout>

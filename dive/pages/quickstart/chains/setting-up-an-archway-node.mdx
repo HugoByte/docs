@@ -1,0 +1,93 @@
+---
+title: "Setting Up an ARCHWAY Node"
+---
+
+import { Callout } from '../../../node_modules/nextra/dist/components/callout.js'
+
+# Setting up an ARCHWAY Node
+
+In this guide, you'll learn how to set up an Archway node using DIVE CLI. This process enables you to interact with the Cosmos blockchain in your local environment. Follow these steps to get started:
+
+## Step 1: Ensure Kurtosis Engine is Running
+
+Starting a Cosmos chain with DIVE CLI is a straightforward process. Before you proceed, make sure the Kurtosis Engine is running in the background. If it's not already running, start it with the following command:
+
+```bash filename="" copy
+kurtosis engine start
+```
+
+## Step 2: Start Archway Chain
+
+To start an Archway node, run the following command:
+
+```bash filename="" copy
+dive chain archway
+```
+
+Executing this command will generate 'services.json' in the working directory, which contains service details for the 'archway' chain.
+
+<details>
+<summary>
+services.json
+</summary>
+
+```json filename="" copy
+{
+  "service_name": "node-service-constantine-3",
+  "endpoint_public": "http://127.0.0.1:4564",
+  "endpoint": "http://172.16.0.3:26657",
+  "keypassword": "password",
+  "chain_id": "constantine-3",
+  "chain_key": "constantine-3-key"
+}
+```
+
+- **service_name:** The name of the service.
+- **endpoint_public:** The public endpoint URL for interacting with the service.
+- **endpoint:** The endpoint for interacting with the service.
+- **keypassword:** The password used for accessing the service.
+- **chain_id:** The chain name.
+- **chain_key:** The chain's key name.
+</details>
+
+
+## Step 3: Start Archway with Custom Configuration
+
+If you want to start the Archway node with a custom configuration, you can create a custom configuration JSON file with the desired settings. Use the following command to start Archway with your custom configuration:
+
+```bash filename="" copy
+dive chain archway -c /path/to/custom-config.json
+```
+
+Replace `/path/to/custom-config.json` with the actual file path to your custom configuration file, which should be in JSON format. Here's an example of a custom configuration file for Archway:
+
+<details>
+<summary>
+custom_archway.json
+</summary>
+
+```json filename="" copy
+{
+  "cid": "archway-node-0",
+  "key": "archway-node-0-key",
+  "private_grpc": 9090,
+  "private_http": 9091,
+  "private_tcp": 26656,
+  "private_rpc": 26657,
+  "public_grpc": 9090,
+  "public_http": 9091,
+  "public_tcp": 26656,
+  "public_rpc": 4564,
+  "password": "password"
+}
+```
+In this example, we've set custom values for the CID (Chain ID), key, ports, and password. Modify the values in the JSON file according to your requirements.
+</details>
+
+
+
+## Step 4: Setup is Completed
+
+After running the command, DIVE CLI will automatically start the ARCHWAY node, whether with the default or custom configuration and handle the necessary initialization processes. Please wait for the ARCHWAY node to fully initialize, which may take a few moments.
+
+Once the initialization is complete, you can interact with the local Archway node with your chosen configuration as needed. DIVE CLI sets up the ARCHWAY node on your local environment, enabling you to deploy and test smart contracts, explore transactions, and experiment with various ICON blockchain features.

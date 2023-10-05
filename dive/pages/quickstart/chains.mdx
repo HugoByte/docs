@@ -1,0 +1,26 @@
+---
+title: "Setting up Local Node"
+---
+
+import { Callout } from '../../node_modules/nextra/dist/components/callout.js'
+
+# Setting up Local Node
+
+Using DIVE, you can set up a local blockchain node effortlessly, simplifying the process of building, initializing, and starting a specified blockchain node. DIVE takes care of tasks such as compiling, configuring dependencies, and launching the node, ensuring it's ready for network participation, transaction processing, and ledger maintenance within the specified blockchain ecosystem.
+
+## Command Structure
+
+The "chain" command has a flexible structure that allows you to specify the type of blockchain node you want to set up. The available subcommands include:
+
+- **archway:** Build, initialize, and start an Archway node.
+- **eth:** Build, initialize, and start an Ethereum (ETH) node.
+- **hardhat:** Build, initialize, and start a Hardhat node.
+- **icon:** Build, initialize, and start an ICON node.
+- **neutron:** Build, initialize, and start a Neutron node.
+
+## Usage
+
+To use the "chain" command, follow this general format:
+
+```bash
+dive chain [subcommand] [flags]
