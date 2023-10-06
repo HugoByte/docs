@@ -15,4 +15,30 @@ Before you begin with DIVE CLI, make sure you have the following prerequisites i
 
 These prerequisites are essential to ensure a smooth setup and usage of DIVE CLI.
 
+## Installing Dive CLI
+
+### Install on MacOS
+
+```bash filename="" copy
+brew install hugobyte/tap/dive-cli
+```
+
+### Install on Linux
+
+```bash filename="" copy
+curl -L https://github.com/HugoByte/DIVE/releases/download/{latest-version}/dive-cli_{latest-version}_linux_{arch}.tar.gz
+tar -xvzf dive-cli_{latest-version}_linux_{arch}.tar.gz
+mv dive /usr/local/bin
+rm dive-cli_{latest-version}_linux_{arch}.tar.gz
+```
+
+### Install on Windows
+
+```powershell filename="" copy
+Invoke-WebRequest -Uri "https://github.com/HugoByte/DIVE/releases/download/{latest-version}/dive-cli_{latest-version}_windows_{arch}.tar.gz" -OutFile dive.tar.gz
+tar -xvzf dive.tar.gz
+dive.exe
+```
+Replace `{latest-version}` and `{arch}` with the appropriate values for the latest version and the architecture you want to support.
+
 Ready to dive in? Let's get started with the installation and setup process.
