@@ -1,0 +1,21 @@
+{
+    "setting-up-an-icon-node": {
+      "title":  "Setting up an ICON node"
+    },
+    "setting-up-an-eth-node": {
+      "title": "Setting up an Ethereum node"
+    }
+    ,
+    "setting-up-an-hardhat-node": {
+      "title": "Setting up an Hardhat node"
+    }
+    ,
+    "setting-up-an-archway-node": {
+      "title": "Setting up an Archway-node"
+    }
+    ,
+    "setting-up-a-neutron-node": {
+      "title": "Setting up a Neutron node"
+    }
+  }
+  

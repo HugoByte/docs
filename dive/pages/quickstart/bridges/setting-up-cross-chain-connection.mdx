@@ -1,38 +1,44 @@
 ---
-title: Setting up Cross Chain Connection (ICON-ETH) using BTP Bridge
+title: Setting up Cross Chain Connection using BTP Bridge
 ---
 
-import { Callout } from '../../node_modules/nextra/dist/components/callout.js'
+import { Callout } from '../../../node_modules/nextra/dist/components/callout.js'
 
+# Setting up Cross Chain Connection using BTP Bridge
 
-# Setting up Cross Chain Connection (ICON-ETH) using BTP Bridge
-
-Follow these steps to establish a cross-chain connection between ICON and Ethereum using the BTP Bridge:
+Follow these steps to establish a cross-chain connection between chains using the BTP Bridge:
 
 ## Step 1: Ensure Kurtosis Engine is Running
 
 Before proceeding, ensure that the Kurtosis Engine is running in the background. If it's not already running, start it with the following command:
 
-```filename="" copy
+```bash filename="" copy
 kurtosis engine start
 ```
 
-## Step 2:  Start Two Chains (ICON and Ethereum/Hardhat) with BTP Bridge
+## Step 2: Start Two Chains with BTP Bridge
 
 To start both the ICON and Ethereum chains and establish a BTP bridge between them, run the following command:
 
-```filename="" copy
+```bash filename="" copy
 dive bridge btp --chainA icon --chainB eth
 ```
 
-Executing above command will generate 'dive.json' in working directory which contains service details for the 'icon' and 'eth' chains.
+Similarly, To start both the ICON and Hardhat chains and establish a BTP bridge between them, run the following command:
+
+```bash filename="" copy
+dive bridge btp --chainA icon --chainB hardhat
+```
+
+Executing the above command will generate a 'dive.json' file in the working directory, The file contains service details of the running nodes and deployed contract addresses. Here's what you can find in `dive.json`:
+
 
 <details>
 <summary>
 Example of dive.json
 </summary>
 
-```filename="" copy
+```json filename="" copy
 {
 	"bridge": "false",
 	"chains": {
@@ -83,15 +89,16 @@ Example of dive.json
 	}
 }
 ```
+
 </details>
 
 <Callout type="info" emoji="💡">
-  *Tip:* By default, the bridge flag is set to false. If you need an ICON bridge, add the --bridge flag to the command.
+  *Tip:* By default, the bridge flag is set to false. If you need an ICON bridge, add the `--bmvbridge` or `-b` flag to the command.
 </Callout>
 
-The above command automates several essential tasks to configure and initialise the local environment:
+The above command automates several essential tasks to configure and initialize the local environment:
 
-- **Spinning up ICON and Ethereum Nodes:** DIVE automatically starts and configures the required ICON and Ethereum nodes for your local environment.
+- **Spinning up Nodes:** DIVE automatically starts and configures the required ICON and Ethereum nodes for your local environment.
 
 - **Installing Required npm Dependencies:** DIVE takes care of installing all the necessary npm dependencies for seamless operation.
 
@@ -102,7 +109,39 @@ The above command automates several essential tasks to configure and initialise 
 - **Starting the Relay:** The relay image is built and launched, actively monitoring both ICON and Ethereum chains to enable smooth message transfer between them.
 
 
-## Step 3: Setup is completed
-Once the process completes, your local environment with the ICON and Ethereum chains connected via the BTP bridge will be ready for testing and development.
+### Running BTP Bridge for Already Running Nodes
 
-DIVE CLI simplifies the entire setup, allowing you to focus on developing and testing your decentralized applications with ease. Happy developing 
+To set up the BTP Bridge between already running ICON nodes and Ethereum, use the following command:
+
+```bash filename="" copy
+dive bridge btp --chainA icon --chainB eth --chainAServiceName <service name of icon> --chainBServiceName <service name of eth>
+```
+
+To set up the BTP Bridge between already running ICON nodes and Hardhat, use the following command:
+
+```bash filename="" copy
+dive bridge btp --chainA icon --chainB hardhat --chainAServiceName <service name of icon> --chainBServiceName <service name of hardhat>
+```
+
+<Callout type="info" emoji="💡">
+  *Note:* When setting up a BTP relay between already running ICON nodes and Ethereum/Hardhat, you need to decentralize the ICON node first.
+</Callout>
+
+
+<Callout type="info" emoji="💡">
+  *Note:* Service names for "chainA" and "chainB" can be found in the `services.json` file.
+</Callout>
+
+
+## Step 3: Setup is Completed
+
+Once the process completes, your local environment with the chains connected via the BTP bridge will be ready for testing and development.
+
+DIVE CLI simplifies the entire setup, allowing you to focus on developing and testing your decentralized applications with ease.
+
+
+<Callout type="info" emoji="💡">
+  *Note:* Currently, DIVE supports BTP bridge connections between ICON and Ethereum/Hardhat chains.
+</Callout>
+
+Happy developing!

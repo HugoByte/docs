@@ -1,0 +1,37 @@
+---
+title: Setting up the Bridge
+---
+
+# Setting up the Bridge
+
+The "bridge" command in DIVE CLI enables you to establish connections between two different blockchain chains using various supported cross-chain communication protocols. This powerful feature allows you to create a relay that connects two distinct chains and facilitates the seamless exchange of messages and data between them.
+
+## Usage
+
+### Dive Bridge Command
+
+The `dive bridge` command provides a unified interface to set up cross-chain bridges. You can use it to initiate communication between different blockchain networks by choosing from the available subcommands:
+
+```bash
+dive bridge [flags]
+dive bridge [command]
+```
+
+#### Available Bridge Commands
+
+1. **BTP (Blockchain Transfer Protocol) Bridge**
+   - Subcommand: `btp`
+   - Description: Starts a BTP Bridge between ChainA and ChainB, enabling cross-chain communication via the BTP protocol.
+
+2. **IBC (Inter-Blockchain Communication) Bridge**
+   - Subcommand: `ibc`
+   - Description: Establishes connections between Cosmos-based ChainA and ChainB, initiating cross-chain communication using the IBC protocol.
+
+### Global Flags
+
+- `-h, --help`: Displays help for the `dive bridge` command.
+- `--verbose`: Prints logs to Stdout for detailed information during the bridge setup process.
+
+For more detailed information about a specific bridge command, you can use the `--help` flag with the desired subcommand, e.g., `dive bridge btp --help` or `dive bridge ibc --help`.
+
+DIVE CLI simplifies the process of creating bridges between blockchain networks, allowing you to harness the power of cross-chain communication in your decentralized applications and experiments. This feature opens up new possibilities for interoperability and data exchange between diverse blockchain ecosystems, making your development journey more versatile and exciting.

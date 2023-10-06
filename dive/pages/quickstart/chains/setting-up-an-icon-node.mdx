@@ -2,8 +2,7 @@
 title: "Setting Up an ICON Node"
 ---
 
-import { Callout } from '../../node_modules/nextra/dist/components/callout.js'
-
+import { Callout } from '../../../node_modules/nextra/dist/components/callout.js'
 
 # Setting up an ICON Node
 
@@ -11,28 +10,28 @@ In this guide, you'll learn how to set up an ICON node using DIVE CLI. This proc
 
 ## Step 1: Ensure Kurtosis Engine is Running
 
-Before you proceed, make sure the Kurtosis Engine is running in the background. If it's not already running, start it with the following command:
+Before you proceed, ensure that the Kurtosis Engine is running in the background. If it's not already running, start it with the following command:
 
-```filename="" copy
+```bash
 kurtosis engine start
 ```
 
-## Step 2: Start Icon Chain
+## Step 2: Start ICON Chain
 
 To start a single ICON node, execute the following command:
 
-```filename="" copy
+```bash
 dive chain icon
 ```
 
-Executing above command will generate 'services.json,' in working directory which contains service details for the 'icon' chain.
+Executing the above command will generate a 'services.json' file in the working directory, which contains service details for the 'icon' chain.
 
 <details>
 <summary>
 services.json
 </summary>
 
-```filename="" copy
+```json
 {
   "service_name": "icon-node-0",
   "endpoint_public": "http://127.0.0.1:8090/api/v3/icon_dex",
@@ -44,13 +43,14 @@ services.json
   "nid": "0x3"
 }
 ```
-* <b>service_name:</b> The name of the service.
-* <b>endpoint_public:</b> The public endpoint URL for interacting with the service.
-* <b>keypassword:</b> The password used for accessing the service's keystore."
-* <b>keystore_path:</b> The file path for the service's keystore.
-* <b>network:</b> The network ID.
-* <b>network_name:</b> The name of the network.
-* <b>nid:</b> The unique identifier id for the network.  
+
+- **service_name:** The name of the service.
+- **endpoint_public:** The public endpoint URL for interacting with the service.
+- **keypassword:** The password used for accessing the service's keystore.
+- **keystore_path:** The file path for the service's keystore.
+- **network:** The network ID.
+- **network_name:** The name of the network.
+- **nid:** The unique identifier for the network.
 
 </details>
 
@@ -68,8 +68,8 @@ DIVE CLI allows you to start a single ICON chain with custom configurations, inc
 
 To start the ICON chain with custom configurations, use the following command:
 
-```filename="" copy
-dive chain icon --config 'path to config.json' --genesis 'path to genesis file' --id 'custom chain id'
+```bash
+dive chain icon --config 'path to config.json' --genesis 'path to genesis file'
 ```
 
 **Parameters Explanation:**
@@ -81,32 +81,32 @@ dive chain icon --config 'path to config.json' --genesis 'path to genesis file' 
 Example of config
 </summary>
 
-```filename="" copy
+```json
 {
-"id": "0",
-"private_port": 9080,
-"public_port": 8090,
-"p2p_listen_address": "7080",
-"p2p_address": "8080",
-"cid": "0xacbc4e"
+  "id": "0",
+  "private_port": 9080,
+  "public_port": 8090,
+  "p2p_listen_address": "7080",
+  "p2p_address": "8080",
+  "cid": "0xacbc4e"
 }
 ```
+
 </details>
 
 - `--genesis`: Provide the path to your custom genesis file using the `--genesis` flag. The genesis file contains the initial state and configurations for the ICON blockchain.
-- `--id`: Assign a custom chain ID for your ICON chain using the `--id` flag. This ID is used to uniquely identify your custom chain.
 
 <Callout type="info" emoji="💡">
-  *Tip:* If you want to start your icon chain for BTP support, you can also decentralize by adding the `--decentralisation` flag.
+  *Tip:* If you want to start your ICON chain for BTP support, you can also decentralize it by adding the `--decentralisation` flag.
 </Callout>
 
-### Decentralize Already Running ICON Chain for BTP Support
+### Decentralize an Already Running ICON Chain for BTP Support
 
 DIVE CLI provides the capability to decentralize an already running ICON chain, preparing it for BTP (Blockchain Transfer Protocol) support. Follow these steps to decentralize your existing ICON chain using DIVE CLI:
 
 To decentralize your existing ICON chain for BTP support, use the following command:
 
-```filename="" copy
+```bash
 dive chain icon decentralize --keyPassword 'keypassword' --keystorePath 'path to keystore file' --nid 'network ID' --nodeEndpoint 'Endpoint address' --serviceName 'container name'
 ```
 

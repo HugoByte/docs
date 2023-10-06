@@ -41,6 +41,9 @@ dive bridge [command]
 | Command               | Description                                      |
 | --------------------- | -------------------------------------------------|
 | `btp`      | Starts BTP Bridge between ChainA and ChainB
+| `ibc`      | Starts IBC Bridge between ChainA and ChainB
+
+
 
 
 ### dive bridge btp
@@ -59,7 +62,27 @@ dive bridge btp [flags]
 | -------------- | ---------- | -------------------------------------------------|
 | `--chainA string` | true         | Mention Name of Supported Chain
 | `--chainB string`| true    | Mention Name of Supported Chain
-| `--bridge` | false | Add this flag if icon bridge is required
+| `--bmvbridge` | false | Add this flag if icon bridge is required
+
+
+### dive bridge ibc
+
+#### Description
+Starts IBC Bridge between ChainA and ChainB
+
+#### Usage
+
+```filename="" copy
+dive bridge ibc [flags]
+```
+
+#### Flags
+| Flags          | Required   | Description                                      |
+| -------------- | ---------- | -------------------------------------------------|
+| `--chainA string` | true         | Mention Name of Supported Chain
+| `--chainB string`| true    | Mention Name of Supported Chain
+| `--chainAServiceName string`| true    | Mention service name if node is already running 
+| `--chainBServiceName string`| true    | Mention service name if node is already running
 
 
 ### dive chain
@@ -80,6 +103,8 @@ dive chain [command]
 | `eth`      | Build, initialize and start a eth node
 | `hardhat` | Build, initialize and start a hardhat node
 |`icon` | Build, initialize and start a icon node
+|`archway` | Build, initialize and start a archway node
+|`neutron` | Build, initialize and start a neutron node
 
 
 ### dive chain icon
@@ -112,7 +137,7 @@ dive chain icon [command]
 ### dive chain icon decentralize
 
 #### Description
-Decentralise Icon Node is necessary if you want to connect your local icon node to BTP network
+A Decentralise Icon Node is necessary if you want to connect your local icon node to BTP network
 
 #### Usage
 

@@ -1,0 +1,79 @@
+---
+title: "Setting Up a NEUTRON Node"
+---
+
+import { Callout } from '../../../node_modules/nextra/dist/components/callout.js'
+
+# Setting up a NEUTRON Node
+
+In this guide, you'll learn how to set up a Neutron node using DIVE CLI. This process enables you to interact with the cosmos blockchain in your local environment. Follow these steps to get started:
+
+## Step 1: Ensure Kurtosis Engine is Running
+
+Starting a Neutron chain with DIVE CLI is a straightforward process. Before you proceed, make sure the Kurtosis Engine is running in the background. If it's not already running, start it with the following command:
+
+```bash filename="" copy
+kurtosis engine start
+```
+
+## Step 2: Start Neutron Chain
+
+To start a Neutron node, you can use the following command:
+
+```bash filename="" copy
+dive chain neutron
+```
+
+Executing this command will generate 'services.json' in the working directory, which contains service details for the 'neutron' chain.
+
+<details>
+<summary>
+services.json
+</summary>
+
+```json filename="" copy
+{
+   "neutron-node-test-chain1":{
+      "service_name":"neutron-node-test-chain1",
+      "endpoint_public":"http://127.0.0.1:26669",
+      "endpoint":"http://172.16.0.4:26657",
+      "chain_id":"test-chain1",
+      "chain_key":"test-key"
+   }
+}
+```
+
+- **service_name:** The name of the service.
+- **endpoint_public:** The public endpoint URL for interacting with the service.
+- **endpoint:** The endpoint for interacting with the service.
+</details>
+
+
+## Step 3: Start Neutron with Custom Configuration
+
+You can start the Neutron node with custom public ports and a custom chain ID using the following command:
+
+```bash filename="" copy
+dive chain neutron -c /path/to/custom-config.json
+```
+
+Replace `/path/to/custom-config.json` with the actual file path to your custom configuration file. Here's an example of a custom configuration file:
+
+<details>
+<summary>
+custom_config.json
+</summary>
+
+```json filename="" copy
+{
+  "chainId": "test-chain2",
+  "key": "test-key",
+  "password": "clock post desk civil pottery foster expand merit dash seminar song memory figure uniform spice circle try happy obvious trash crime hybrid hood cushion",
+  "public_grpc": 8033,
+  "public_tcp": 26634,
+  "public_http": 1315,
+  "public_rpc": 26696
+}
+```
+In this example, we've set a custom chain ID, key, password, and custom public ports. Modify the values in the JSON file according to your requirements.
+</details>
